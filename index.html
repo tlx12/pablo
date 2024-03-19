@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Options Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+      background-color: #06123e; /* Default background color */
+      transition: background-color 0.5s;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      font-weight: bold;
+    }
+
+    #result {
+      display: none;
+      margin-top: 20px;
+    }
+
+    #cooking-emoji {
+      font-size: 60px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select an Option:</h1>
+  <button onclick="showResult('player')">U a player now?</button>
+  <button onclick="showResult('lover')">U a lover boy?</button>
+  
+  <div id="result">
+    <p id="message"></p>
+    <div id="cooking-emoji" style="display: none;">😭😎</div>
+  </div>
+
+  <script>
+    function showResult(choice) {
+      var resultDiv = document.getElementById("result");
+      var messageP = document.getElementById("message");
+      var cookingEmojiDiv = document.getElementById("cooking-emoji");
+
+      if (choice === 'player') {
+        resultDiv.style.display = "block";
+        messageP.textContent = "LADIES AND GENTLEMEN PABALLO MANAMELA IS COOKING";
+        cookingEmojiDiv.style.display = "block";
+        document.body.style.backgroundColor = "#fff";
+        document.body.style.animation = "pulse 1s infinite";
+      } else if (choice === 'lover') {
+        resultDiv.style.display = "block";
+        messageP.textContent = "YOU NOT COOKING 😬😬";
+        cookingEmojiDiv.style.display = "none";
+        document.body.style.backgroundColor = "#ffcccc"; // Red background
+        document.body.style.animation = "none";
+      }
+    }
+  </script>
+</body>
+</html>
